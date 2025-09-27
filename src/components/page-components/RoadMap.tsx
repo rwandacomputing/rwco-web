@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Check, Clock, Cpu, Brain } from "lucide-react";  // added icons
+import { Check, Clock, Cpu, Brain } from "lucide-react";
 
 interface Event {
   year: string;
@@ -119,7 +119,9 @@ const RoadMap = () => {
 
       <div className="container mx-auto px-6">
         <div className="relative">
-          <div className="border-l-2 border-olympiad-blue absolute left-1/2 h-full ml-[-1px]" />
+          {/* center line */}
+          <div className="absolute left-1/2 top-0 h-full border-l-2 border-olympiad-blue -ml-1" />
+          
           <div className="space-y-12">
             {olympiadEvents.map((event, idx) => {
               const statusClasses = getStatusClasses(event.status);
@@ -127,29 +129,22 @@ const RoadMap = () => {
 
               return (
                 <div key={idx} className="relative flex w-full">
-                  <div
-                    className={`w-1/2 pr-8 ${isLeft ? "text-right" : "text-left"} ${
-                      isLeft ? "pl-0" : "pl-8"
-                    }`}
-                  >
-                    <div className="inline-flex items-center justify-end">
-                      <div className="text-xs font-medium text-gray-500 mr-2">
-                        {event.year}
-                      </div>
-                      {isLeft && (
+                  <div className={`w-1/2 ${isLeft ? "pr-8 text-right" : "pl-8 text-left"}`}>
+                    {/* For left side entries, icon and date on left; for right side, we skip this */}
+                    {isLeft && (
+                      <div className="flex items-center justify-end mb-2">
+                        <div className="text-xs font-medium text-gray-500 mr-2">
+                          {event.year}
+                        </div>
                         <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}>
                           {statusClasses.icon}
                         </div>
-                      )}
-                    </div>
-                    <div
-                      className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm px-6 py-4 mt-2 inline-block max-w-sm`}
-                    >
-                      <div className="flex items-center mb-2 space-x-2">
+                      </div>
+                    )}
+                    <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm px-6 py-4`}>
+                      <div className="flex items-center mb-2 space-x-2 justify-start">
                         {trackIcon(event.track)}
-                        <div
-                          className={`inline-block px-2 py-1 rounded-full text-[11px] font-semibold ${statusClasses.bg} text-white`}
-                        >
+                        <div className={`inline-block px-2 py-1 rounded-full text-[11px] font-semibold ${statusClasses.bg} text-white`}>
                           {event.status === "completed"
                             ? "Completed"
                             : event.status === "in-progress"
@@ -164,6 +159,7 @@ const RoadMap = () => {
                     </div>
                   </div>
 
+                  {/* middle vertical and icon for right side entries */}
                   <div className="absolute left-1/2 top-0 transform -translate-x-1/2">
                     {!isLeft && (
                       <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}>
@@ -172,7 +168,8 @@ const RoadMap = () => {
                     )}
                   </div>
 
-                  <div className="w-1/2 pl-8">{/* empty half for layout symmetry */}</div>
+                  {/* right empty placeholder or content */}
+                  <div className="w-1/2">{/* blank or you could mirror content for right side */}</div>
                 </div>
               );
             })}
@@ -184,4 +181,3 @@ const RoadMap = () => {
 };
 
 export default RoadMap;
-
