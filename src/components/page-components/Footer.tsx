@@ -36,7 +36,7 @@ const Footer = () => {
                   className=""
                 />
               </div>
-              <span className="text-xl font-semibold">RwIO</span>
+              <span className="text-xl font-semibold">RwCO</span>
             </div>
             <p className="text-gray-300 mb-6">
               Promoting excellence in algorithmic and programming competitions
