@@ -27,7 +27,7 @@ const Hero = () => {
               </h1>
 
               <p className="mt-8 text-lg text-olympiad-gray">
-                Join Rwanda Computing Olympiad, a national informatics and AI competition for high
+                Join Rwanda Computing Olympiad, a national Informatics and AI competition for high
                 schoolers, encouraging problem-solving skills and innovation in Artificial intelligence, 
                 programming, designed for young enthusiasts aged 20 and below.
               </p>
