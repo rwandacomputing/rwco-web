@@ -43,7 +43,7 @@ export default function Sponsors() {
             Rwanda Computing Olympiad is proudly supported by leading
             technology companies and educational institutions committed to
             nurturing young talent. These organizations make the Rwanda
-            Informatics Olympiad possible through their generous support.
+            Computing Olympiad possible through their generous support.
           </p>
         </div>
 
