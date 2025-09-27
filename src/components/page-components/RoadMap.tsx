@@ -51,21 +51,21 @@ const RoadMap = () => {
       year: "June 2026",
       title: "Final Test for National Teams",
       status: "upcoming",
-      description: "Combined algorithm + AI test to select Rwanda’s IOI & IOAI teams.",
+      description: "Combined algorithm + AI test to select Rwanda's IOI & IOAI teams.",
       track: "both",
     },
     {
       year: "Aug 2-8, 2026",
       title: "IOAI – International AI Olympiad",
       status: "upcoming",
-      description: "Rwanda’s AI team competes in Abu Dhabi, UAE.",
+      description: "Rwanda's AI team competes in Abu Dhabi, UAE.",
       track: "AI",
     },
     {
       year: "Aug 9-16, 2026",
       title: "IOI – International Informatics Olympiad",
       status: "upcoming",
-      description: "Rwanda’s programming team competes in Tashkent, Uzbekistan.",
+      description: "Rwanda's programming team competes in Tashkent, Uzbekistan.",
       track: "core",
     },
   ];
@@ -106,86 +106,90 @@ const RoadMap = () => {
   };
 
   return (
-    <div className="relative py-16" id="timeline">
-      <div className="text-center mb-8 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-olympiad-navy mb-4">
+    <div className="relative py-16 bg-gray-50" id="timeline">
+      <div className="text-center mb-12 px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Path to IOAI & IOI 2026
         </h2>
-        <div className="h-1 w-24 bg-olympiad-blue mx-auto mb-4"></div>
-        <p className="text-olympiad-gray max-w-lg mx-auto text-lg">
+        <div className="h-1 w-24 bg-blue-600 mx-auto mb-4"></div>
+        <p className="text-gray-600 max-w-lg mx-auto text-lg">
           Our path combining algorithmic & AI tracks to prepare for both 2026 Olympiads.
         </p>
       </div>
 
       <div className="container mx-auto px-6">
         <div className="relative">
-          {/* central vertical blue line */}
-          <div className="absolute left-1/2 top-0 h-full border-l-2 border-olympiad-blue -ml-1"></div>
-          <div className="space-y-16">
+          {/* Central vertical blue line */}
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-blue-600 transform -translate-x-1/2"></div>
+          
+          <div className="space-y-12">
             {olympiadEvents.map((event, idx) => {
               const statusClasses = getStatusClasses(event.status);
               const isLeft = idx % 2 === 0;
 
               return (
-                <div key={idx} className="relative flex w-full">
-                  {/* content on left or right */}
-                  <div
-                    className={`w-1/2 ${
-                      isLeft ? "pr-8 text-right" : "pl-8 text-left"
-                    }`}
-                  >
-                    {isLeft && (
-                      <div className="flex items-center justify-end mb-2">
-                        <div className="text-xs font-medium text-gray-500 mr-2">
-                          {event.year}
-                        </div>
-                        <div
-                          className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}
-                        >
-                          {statusClasses.icon}
-                        </div>
-                      </div>
-                    )}
-
-                    <div
-                      className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm px-6 py-4`}
-                    >
-                      <div className="flex items-center mb-2 space-x-2 justify-start">
-                        {trackIcon(event.track)}
-                        <div
-                          className={`inline-block px-2 py-1 rounded-full text-[11px] font-semibold ${statusClasses.bg} text-white`}
-                        >
-                          {event.status === "completed"
-                            ? "Completed"
-                            : event.status === "in-progress"
-                            ? "In Progress"
-                            : "Upcoming"}
-                        </div>
-                      </div>
-                      <h3
-                        className={`font-semibold text-[16px] ${statusClasses.textColor}`}
-                      >
-                        {event.title}
-                      </h3>
-                      <p className="text-olympiad-gray py-1">
-                        {event.description}
-                      </p>
+                <div key={idx} className="relative">
+                  {/* Central timeline dot */}
+                  <div className="absolute left-1/2 top-6 transform -translate-x-1/2 z-10">
+                    <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow-lg`}>
+                      {statusClasses.icon}
                     </div>
                   </div>
 
-                  {/* icon on central line for right side entries */}
-                  <div className="absolute left-1/2 top-0 transform -translate-x-1/2">
-                    {!isLeft && (
-                      <div
-                        className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}
-                      >
-                        {statusClasses.icon}
-                      </div>
+                  <div className="flex">
+                    {/* Left side content */}
+                    {isLeft ? (
+                      <>
+                        <div className="w-1/2 pr-8">
+                          <div className="text-right">
+                            <div className="text-sm font-medium text-gray-500 mb-2">
+                              {event.year}
+                            </div>
+                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-6 border-2`}>
+                              <div className="flex items-center justify-end mb-3 space-x-2">
+                                <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusClasses.bg} text-white`}>
+                                  {event.status === "completed" ? "Completed" : event.status === "in-progress" ? "In Progress" : "Upcoming"}
+                                </div>
+                                {trackIcon(event.track)}
+                              </div>
+                              <h3 className={`font-bold text-lg mb-2 ${statusClasses.textColor}`}>
+                                {event.title}
+                              </h3>
+                              <p className="text-gray-600 text-sm leading-relaxed">
+                                {event.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-1/2"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-1/2"></div>
+                        <div className="w-1/2 pl-8">
+                          <div className="text-left">
+                            <div className="text-sm font-medium text-gray-500 mb-2">
+                              {event.year}
+                            </div>
+                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-6 border-2`}>
+                              <div className="flex items-center justify-start mb-3 space-x-2">
+                                {trackIcon(event.track)}
+                                <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusClasses.bg} text-white`}>
+                                  {event.status === "completed" ? "Completed" : event.status === "in-progress" ? "In Progress" : "Upcoming"}
+                                </div>
+                              </div>
+                              <h3 className={`font-bold text-lg mb-2 ${statusClasses.textColor}`}>
+                                {event.title}
+                              </h3>
+                              <p className="text-gray-600 text-sm leading-relaxed">
+                                {event.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </>
                     )}
                   </div>
-
-                  {/* placeholder half for right side */}
-                  <div className="w-1/2">{/* blank or you could mirror on right side */}</div>
                 </div>
               );
             })}
