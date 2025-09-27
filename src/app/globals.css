@@ -1,0 +1,112 @@
+@import "prismjs/themes/prism-tomorrow.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-sans {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss03", "cv01", "cv02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-olympiad-navy hover:text-olympiad-blue transition-colors duration-300
+    after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 
+    after:bg-olympiad-blue after:origin-bottom-right after:transition-transform after:duration-300
+    hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-olympiad-blue to-olympiad-blue/50 text-white hover:bg-olympiad-blue/90 px-6 py-3;
+  }
+
+  .btn-outline {
+    @apply btn border border-olympiad-blue text-olympiad-blue hover:bg-olympiad-blue/10 px-6 py-3;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-olympiad-navy mb-6 relative;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-20 h-1 bg-olympiad-blue mt-2;
+  }
+
+  .olympiad-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}  /* This should be the only closing brace */
