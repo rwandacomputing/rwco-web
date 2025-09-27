@@ -9,24 +9,39 @@ const Mission = () => {
   const cards = [
     {
       title: "Our Mission",
-      description: "We identify and nurture talented young programmers across Rwanda, providing them with world-class training in algorithms, data structures, and problem-solving. Through structured competitions and camps, we prepare students to excel in international informatics olympiads and beyond.",
+      description: "We identify and nurture talented young programmers and AI enthusiasts across Rwanda, providing them with world-class training in algorithms, data structures, machine learning, and problem-solving. Through structured competitions, AI projects, and camps, we prepare students to excel in international informatics and artificial intelligence olympiads and beyond.",
       icon: <Target className="h-6 w-6 text-blue-600" />,
       color: "blue",
-      highlights: ["Identify talent", "Provide world-class training", "Compete internationally"]
+      highlights: [
+        "Identify talent",
+        "Provide world-class training",
+        "Advance AI and informatics",
+        "Compete internationally"
+      ]
     },
     {
       title: "Our Vision",
-      description: "We envision Rwanda as a recognized center of excellence in informatics education, where computational thinking is embedded in every school. Our students will not only represent Rwanda on the global stage but become leaders in technological innovation and digital transformation.",
+      description: "We envision Rwanda as a recognized center of excellence in informatics and artificial intelligence education, where computational thinking and data-driven innovation are embedded in every school. Our students will not only represent Rwanda on the global stage but also become leaders in AI research, technological innovation, and digital transformation.",
       icon: <LightbulbIcon className="h-6 w-6 text-amber-600" />,
       color: "amber",
-      highlights: ["National excellence", "Global representation", "Tech leadership"]
+      highlights: [
+        "National excellence",
+        "Global representation",
+        "Tech and AI leadership"
+      ]
     },
     {
       title: "Core Values",
-      description: "Excellence in all we do. Collaboration across institutions. Inclusivity for all talented students regardless of background. Innovation in our approaches. Impact that extends beyond competitions to real-world applications.",
+      description: "Excellence in all we do. Collaboration across institutions. Inclusivity for all talented students regardless of background. Innovation in our approaches, from algorithms to machine learning. Impact that extends beyond competitions to real-world applications of informatics and AI.",
       icon: <Award className="h-6 w-6 text-purple-600" />,
       color: "purple",
-      highlights: ["Excellence", "Collaboration", "Inclusivity", "Innovation", "Impact"]
+      highlights: [
+        "Excellence",
+        "Collaboration",
+        "Inclusivity",
+        "Innovation",
+        "Real-world impact"
+      ]
     }
   ];
 
@@ -74,12 +89,12 @@ const Mission = () => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-sm uppercase tracking-wider text-olympiad-blue font-semibold mb-3">Who We Are</h2>
           <h1 className="text-3xl md:text-4xl font-bold text-olympiad-navy mb-6">
-            Rwanda&#39;s Future in Informatics
+            Rwanda&#39;s Future in Informatics &amp; Artificial Intelligence
           </h1>
           <div className="h-1 w-24 bg-olympiad-blue mx-auto mb-6"></div>
           <p className="text-olympiad-gray text-lg">
-            The Rwanda Informatics Olympiad is dedicated to discovering and nurturing 
-            talented young programmers who will represent our nation on the global stage.
+            The Rwanda Informatics &amp; Artificial Intelligence Olympiad is dedicated to discovering and nurturing 
+            talented young programmers and AI innovators who will represent our nation on the global stage.
           </p>
         </div>
         
@@ -127,4 +142,4 @@ const Mission = () => {
   );
 }
 
-export default Mission
+export default Mission;
