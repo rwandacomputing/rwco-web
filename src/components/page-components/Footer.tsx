@@ -120,7 +120,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/rwanda-informatics-olympiad/posts/?feedView=all" target="_blank">
+                <a href="https://www.linkedin.com/company/rwanda-computing-olympiad/posts/?feedView=all" target="_blank">
                   <button
                     className="text-gray-300 hover:text-white transition-colors"
                   >
