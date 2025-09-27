@@ -13,59 +13,59 @@ interface Event {
 const RoadMap = () => {
   const olympiadEvents: Event[] = [
     {
-      year: "Nov 2024",
+      year: "Nov 2025",
       title: "School Selection Test",
-      status: "completed",
-      description: "Students take a school-supervised selection test from their RwIO.",
-      track: "core",
+      status: "upcoming",
+      description: "Students take a school-supervised selection test via Rwanda Computing Olympiad.",
+      track: "both",
     },
     {
-      year: "Dec 2024",
+      year: "Dec 2025",
       title: "Online Camps & Workshops",
-      status: "completed",
-      description: "After passing, students attend algorithm & AI intro workshops.",
+      status: "upcoming",
+      description: "Intro workshops covering algorithms, data structures, and AI foundations.",
       track: "both",
     },
     {
-      year: "Feb 2025",
+      year: "Feb 2026",
       title: "National Selection Test",
-      status: "completed",
-      description: "Determines who moves forward into advanced algorithm / AI training.",
+      status: "upcoming",
+      description: "Test to decide candidates for algorithmic & AI deep training.",
       track: "both",
     },
     {
-      year: "Apr 2025",
-      title: "In-Person Camps & Workshops",
-      status: "completed",
-      description: "Intensive training in algorithms, data structures, plus ML foundations.",
+      year: "Apr 2026",
+      title: "In-Person Training Camp",
+      status: "upcoming",
+      description: "Intensive bootcamp with algorithmic, data structures, and ML modules.",
       track: "both",
     },
     {
-      year: "May 2025",
-      title: "AI Research / Project Track Begins",
-      status: "completed",
-      description: "Students start AI project work (ML, data, model design) for IOAI prep.",
+      year: "June 2026",
+      title: "AI Project / Research Track Begins",
+      status: "upcoming",
+      description: "Students embark on AI projects (model building, ML pipelines) for IOAI prep.",
       track: "AI",
     },
     {
-      year: "June 2025",
-      title: "Final Test to Form National Teams",
-      status: "completed",
-      description: "Tests include algorithmic and AI components to pick IOI & IOAI teams.",
+      year: "June 2026",
+      title: "Final Test for National Teams",
+      status: "upcoming",
+      description: "Combined algorithm + AI test to select Rwanda’s IOI & IOAI teams.",
       track: "both",
     },
     {
-      year: "Aug 2025",
-      title: "International Olympiad in AI (IOAI)",
+      year: "Aug 2-8, 2026",
+      title: "IOAI – International AI Olympiad",
       status: "upcoming",
-      description: "Selected team represents Rwanda at IOAI in Beijing, China.",
+      description: "Rwanda’s AI team competes in Abu Dhabi, UAE.",
       track: "AI",
     },
     {
-      year: "July 2025",
-      title: "International Olympiad in Informatics (IOI)",
+      year: "Aug 9-16, 2026",
+      title: "IOI – International Informatics Olympiad",
       status: "upcoming",
-      description: "Selected team represents Rwanda at IOI (Bolivia or other host).",
+      description: "Rwanda’s programming team competes in Tashkent, Uzbekistan.",
       track: "core",
     },
   ];
@@ -88,7 +88,7 @@ const RoadMap = () => {
           border: "border-blue-200",
           icon: <Clock className="h-5 w-5 text-white animate-pulse" />,
         };
-      default:
+      default: // upcoming
         return {
           bg: "bg-amber-400",
           textColor: "text-amber-700",
@@ -107,44 +107,54 @@ const RoadMap = () => {
 
   return (
     <div className="relative py-16" id="timeline">
-      <div className="text-center max-w-3xl mx-auto mb-8 px-6">
+      <div className="text-center mb-8 px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-olympiad-navy mb-4">
-          Path to IOI & IOAI
+          Path to IOAI & IOI 2026
         </h2>
-        <div className="h-1 w-20 bg-olympiad-blue mx-auto mb-4"></div>
+        <div className="h-1 w-24 bg-olympiad-blue mx-auto mb-4"></div>
         <p className="text-olympiad-gray max-w-lg mx-auto text-lg">
-          Our journey toward representing Rwanda in both the International Olympiad in Informatics and the International Olympiad in AI.
+          Our path combining algorithmic & AI tracks to prepare for both 2026 Olympiads.
         </p>
       </div>
 
       <div className="container mx-auto px-6">
         <div className="relative">
-          {/* center line */}
-          <div className="absolute left-1/2 top-0 h-full border-l-2 border-olympiad-blue -ml-1" />
-          
-          <div className="space-y-12">
+          {/* central vertical blue line */}
+          <div className="absolute left-1/2 top-0 h-full border-l-2 border-olympiad-blue -ml-1"></div>
+          <div className="space-y-16">
             {olympiadEvents.map((event, idx) => {
               const statusClasses = getStatusClasses(event.status);
               const isLeft = idx % 2 === 0;
 
               return (
                 <div key={idx} className="relative flex w-full">
-                  <div className={`w-1/2 ${isLeft ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                    {/* For left side entries, icon and date on left; for right side, we skip this */}
+                  {/* content on left or right */}
+                  <div
+                    className={`w-1/2 ${
+                      isLeft ? "pr-8 text-right" : "pl-8 text-left"
+                    }`}
+                  >
                     {isLeft && (
                       <div className="flex items-center justify-end mb-2">
                         <div className="text-xs font-medium text-gray-500 mr-2">
                           {event.year}
                         </div>
-                        <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}>
+                        <div
+                          className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}
+                        >
                           {statusClasses.icon}
                         </div>
                       </div>
                     )}
-                    <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm px-6 py-4`}>
+
+                    <div
+                      className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm px-6 py-4`}
+                    >
                       <div className="flex items-center mb-2 space-x-2 justify-start">
                         {trackIcon(event.track)}
-                        <div className={`inline-block px-2 py-1 rounded-full text-[11px] font-semibold ${statusClasses.bg} text-white`}>
+                        <div
+                          className={`inline-block px-2 py-1 rounded-full text-[11px] font-semibold ${statusClasses.bg} text-white`}
+                        >
                           {event.status === "completed"
                             ? "Completed"
                             : event.status === "in-progress"
@@ -152,24 +162,30 @@ const RoadMap = () => {
                             : "Upcoming"}
                         </div>
                       </div>
-                      <h3 className={`font-semibold text-[16px] ${statusClasses.textColor}`}>
+                      <h3
+                        className={`font-semibold text-[16px] ${statusClasses.textColor}`}
+                      >
                         {event.title}
                       </h3>
-                      <p className="text-olympiad-gray py-1">{event.description}</p>
+                      <p className="text-olympiad-gray py-1">
+                        {event.description}
+                      </p>
                     </div>
                   </div>
 
-                  {/* middle vertical and icon for right side entries */}
+                  {/* icon on central line for right side entries */}
                   <div className="absolute left-1/2 top-0 transform -translate-x-1/2">
                     {!isLeft && (
-                      <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}>
+                      <div
+                        className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow`}
+                      >
                         {statusClasses.icon}
                       </div>
                     )}
                   </div>
 
-                  {/* right empty placeholder or content */}
-                  <div className="w-1/2">{/* blank or you could mirror content for right side */}</div>
+                  {/* placeholder half for right side */}
+                  <div className="w-1/2">{/* blank or you could mirror on right side */}</div>
                 </div>
               );
             })}
