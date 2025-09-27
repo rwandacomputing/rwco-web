@@ -88,7 +88,7 @@ const Navbar = () => {
                 alt="logo"
               />
             </div>
-            <span className="hidden sm:inline text-olympiad-navy">RwIO</span>
+            <span className="hidden sm:inline text-olympiad-navy">RwCO</span>
           </button>
 
           {/* Desktop Navigation */}
