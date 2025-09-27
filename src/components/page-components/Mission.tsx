@@ -93,7 +93,7 @@ const Mission = () => {
           </h1>
           <div className="h-1 w-24 bg-olympiad-blue mx-auto mb-6"></div>
           <p className="text-olympiad-gray text-lg">
-            The Rwanda Informatics &amp; Artificial Intelligence Olympiad is dedicated to discovering and nurturing 
+            The Rwanda Computing Olympiad is dedicated to discovering and nurturing 
             talented young programmers and AI innovators who will represent our nation on the global stage.
           </p>
         </div>
