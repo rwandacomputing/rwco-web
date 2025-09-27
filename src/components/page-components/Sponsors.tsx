@@ -40,7 +40,7 @@ export default function Sponsors() {
           </h2>
           <div className="h-1 w-24 bg-olympiad-blue mx-auto mb-6"></div>
           <p className="text-olympiad-gray text-lg">
-            Rwanda Informatics Olympiad is proudly supported by leading
+            Rwanda Computing Olympiad is proudly supported by leading
             technology companies and educational institutions committed to
             nurturing young talent. These organizations make the Rwanda
             Informatics Olympiad possible through their generous support.
