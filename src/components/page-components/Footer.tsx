@@ -39,7 +39,7 @@ const Footer = () => {
               <span className="text-xl font-semibold">RwCO</span>
             </div>
             <p className="text-gray-300 mb-6">
-              Promoting excellence in algorithmic and programming competitions
+              Promoting excellence in Algorithmic and AI competitions
               within Rwanda.{" "}
             </p>
             <div className="flex space-x-4">
@@ -158,7 +158,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Rwanda Informatics Olympiad. All
+            &copy; {new Date().getFullYear()} Rwanda Computing Olympiad. All
             rights reserved.
           </p>
         </div>
