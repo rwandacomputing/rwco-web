@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rwanda Informatics Olympiad",
-  description: "Rwanda Informatics Olympiad",
+  title: "Rwanda Computing Olympiad",
+  description: "Rwanda Computing Olympiad",
 };
 
 export default function RootLayout({
