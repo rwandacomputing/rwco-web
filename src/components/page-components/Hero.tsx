@@ -21,7 +21,7 @@ const Hero = () => {
                 Rwanda
                 <span className="text-olympiad-blue bg-gradient-to-r from-olympiad-blue to-olympiad-blue/60 bg-clip-text text-transparent block">
                   {" "}
-                  Informatics
+                  Computing
                 </span>
                 Olympiad
               </h1>
