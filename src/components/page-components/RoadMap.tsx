@@ -106,23 +106,23 @@ const RoadMap = () => {
   };
 
   return (
-    <div className="relative py-16 bg-gray-50" id="timeline">
-      <div className="text-center mb-12 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+    <div className="relative py-12" id="timeline">
+      <div className="text-center mb-8 px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
           Path to IOAI & IOI 2026
         </h2>
-        <div className="h-1 w-24 bg-blue-600 mx-auto mb-4"></div>
-        <p className="text-gray-600 max-w-lg mx-auto text-lg">
+        <div className="h-1 w-20 bg-blue-600 mx-auto mb-3"></div>
+        <p className="text-gray-600 max-w-md mx-auto text-base">
           Our path combining algorithmic & AI tracks to prepare for both 2026 Olympiads.
         </p>
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="relative">
           {/* Central vertical blue line */}
-          <div className="absolute left-1/2 top-0 h-full w-1 bg-blue-600 transform -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 h-full w-0.5 bg-blue-600 transform -translate-x-1/2"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8">
             {olympiadEvents.map((event, idx) => {
               const statusClasses = getStatusClasses(event.status);
               const isLeft = idx % 2 === 0;
@@ -130,9 +130,9 @@ const RoadMap = () => {
               return (
                 <div key={idx} className="relative">
                   {/* Central timeline dot */}
-                  <div className="absolute left-1/2 top-6 transform -translate-x-1/2 z-10">
-                    <div className={`rounded-full ${statusClasses.bg} w-8 h-8 flex items-center justify-center shadow-lg`}>
-                      {statusClasses.icon}
+                  <div className="absolute left-1/2 top-4 transform -translate-x-1/2 z-10">
+                    <div className={`rounded-full ${statusClasses.bg} w-6 h-6 flex items-center justify-center shadow-md`}>
+                      <div className="scale-75">{statusClasses.icon}</div>
                     </div>
                   </div>
 
@@ -140,22 +140,22 @@ const RoadMap = () => {
                     {/* Left side content */}
                     {isLeft ? (
                       <>
-                        <div className="w-1/2 pr-8">
+                        <div className="w-1/2 pr-4">
                           <div className="text-right">
-                            <div className="text-sm font-medium text-gray-500 mb-2">
+                            <div className="text-xs font-medium text-gray-500 mb-1">
                               {event.year}
                             </div>
-                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-6 border-2`}>
-                              <div className="flex items-center justify-end mb-3 space-x-2">
-                                <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusClasses.bg} text-white`}>
-                                  {event.status === "completed" ? "Completed" : event.status === "in-progress" ? "In Progress" : "Upcoming"}
+                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-4 border`}>
+                              <div className="flex items-center justify-end mb-2 space-x-2">
+                                <div className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${statusClasses.bg} text-white`}>
+                                  {event.status === "completed" ? "Done" : event.status === "in-progress" ? "Active" : "Soon"}
                                 </div>
                                 {trackIcon(event.track)}
                               </div>
-                              <h3 className={`font-bold text-lg mb-2 ${statusClasses.textColor}`}>
+                              <h3 className={`font-semibold text-base mb-1 ${statusClasses.textColor}`}>
                                 {event.title}
                               </h3>
-                              <p className="text-gray-600 text-sm leading-relaxed">
+                              <p className="text-gray-600 text-xs leading-relaxed">
                                 {event.description}
                               </p>
                             </div>
@@ -166,22 +166,22 @@ const RoadMap = () => {
                     ) : (
                       <>
                         <div className="w-1/2"></div>
-                        <div className="w-1/2 pl-8">
+                        <div className="w-1/2 pl-4">
                           <div className="text-left">
-                            <div className="text-sm font-medium text-gray-500 mb-2">
+                            <div className="text-xs font-medium text-gray-500 mb-1">
                               {event.year}
                             </div>
-                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-6 border-2`}>
-                              <div className="flex items-center justify-start mb-3 space-x-2">
+                            <div className={`${statusClasses.lightBg} ${statusClasses.border} rounded-lg shadow-sm p-4 border`}>
+                              <div className="flex items-center justify-start mb-2 space-x-2">
                                 {trackIcon(event.track)}
-                                <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusClasses.bg} text-white`}>
-                                  {event.status === "completed" ? "Completed" : event.status === "in-progress" ? "In Progress" : "Upcoming"}
+                                <div className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${statusClasses.bg} text-white`}>
+                                  {event.status === "completed" ? "Done" : event.status === "in-progress" ? "Active" : "Soon"}
                                 </div>
                               </div>
-                              <h3 className={`font-bold text-lg mb-2 ${statusClasses.textColor}`}>
+                              <h3 className={`font-semibold text-base mb-1 ${statusClasses.textColor}`}>
                                 {event.title}
                               </h3>
-                              <p className="text-gray-600 text-sm leading-relaxed">
+                              <p className="text-gray-600 text-xs leading-relaxed">
                                 {event.description}
                               </p>
                             </div>

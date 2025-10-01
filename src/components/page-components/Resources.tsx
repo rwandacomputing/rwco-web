@@ -233,7 +233,7 @@ const Resources = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50" id="resources">
+    <section className="py-16" id="resources">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

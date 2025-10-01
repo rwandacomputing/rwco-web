@@ -1,9 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  socials: {
+    linkedin: string;
+    email: string;
+  };
+}
 
 const Team = () => {
   const teamMembers = [
@@ -158,6 +168,14 @@ const Team = () => {
     },
   ];
 
+  const [shuffledMembers, setShuffledMembers] = useState(teamMembers);
+
+  useEffect(() => {
+    // Only shuffle on the client side after initial render
+    const shuffled = [...teamMembers].sort(() => Math.random() - 0.5);
+    setShuffledMembers(shuffled);
+  }, []); // Empty dependency array means this only runs once after initial mount
+
   return (
     <section className="py-16" id="team">
       <div className="container mx-auto">
@@ -173,7 +191,7 @@ const Team = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {teamMembers.map((member, index) => (
+          {shuffledMembers.map((member, index) => (
             <div
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col"
