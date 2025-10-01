@@ -95,16 +95,16 @@ const Resources = () => {
       color: "purple",
       resources: [
         {
-          title: "Vim",
-          description: "A powerful, free, and open-source, modal text editor.",
-          link: "https://code.visualstudio.com/",
-          type: "both"
-        },
-        {
           title: "VS Code",
           description: "Popular editor with CP & ML extensions.",
           link: "https://code.visualstudio.com/",
           type: "both"
+        },
+        {
+          title: "Vim",
+          description: "A powerful, free, and open-source, modal text editor.",
+          link: "https://www.vim.org/",
+          type: "programming"
         },
         {
           title: "PyCharm",
